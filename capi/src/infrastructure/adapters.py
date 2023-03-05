@@ -10,6 +10,6 @@ class UserRepositoryImpl(UserRepository):
         self.db.connect() 
 
     def create(self, user: User) -> User:
-        query = f"INSERT INTO users (name, email) VALUES ('{user.name}', '{user.email}')"
+        query = f"INSERT INTO user (USER_NAME, USER_EMAIL) VALUES ('{user.name}', '{user.email}')"
         self.db.execute_update(query)
         return user

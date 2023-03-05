@@ -1,0 +1,16 @@
+aws lambda create-function --function-name facebook-conversionapi --runtime python3.9 --handler lambda_function.lambda_handler --zip-file fileb://facebook-conversionapi.zip --role arn:aws:iam::541128407328:role/lambda-execution
+
+aws lambda publish-version --function-name facebook-conversionapi
+
+
+aws rds create-db-instance \
+--db-instance-identifier db-facebook-conversionapi \
+--db-instance-class db.t3.micro \
+--engine mysql \
+--allocated-storage 5 \
+--master-username root \
+--master-user-password 12345689
+
+
+
+
